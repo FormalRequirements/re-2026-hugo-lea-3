@@ -1,20 +1,5 @@
-= Changelog
-:toc:
-
-Generated from git history at 2026-01-20 16:15:04
-
-== Features
-
-* 2026-01-20 - *reqs:* add support for file attachments in requirements ({commit[:hash]})
-* 2026-01-20 - *infra:* implement requirements workflow and changelog generation ({commit[:hash]})
-
-== Bug Fixes
-
-* 2026-01-20 - *docs:* center aligned images in generated output ({commit[:hash]})
-* 2026-01-20 - *docs:* absolute imagesdir path for pdf generation ({commit[:hash]})
-* 2026-01-20 - *ops:* move assets to data directory and correct image paths ({commit[:hash]})
-
-== Documentation
-
-* 2026-01-20 - Added initial README ({commit[:hash]})
-
+[cols="1,1,2,3", options="header"]
+|===
+| Version | Date | Author | Description
+| v0.1-alpha | 2026-01-20 | hugoglvs | Initial Alpha Release
+|===

@@ -31,4 +31,4 @@ include::system.adoc[]
 
 include::project.adoc[]
 
-include::generated/changelog.adoc[]
+
