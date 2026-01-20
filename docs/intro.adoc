@@ -1,4 +1,4 @@
-= Revision History
+== Revision History
 
 [cols="1,1,2,1", options="header"]
 |===
