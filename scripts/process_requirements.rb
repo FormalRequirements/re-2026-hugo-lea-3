@@ -5,7 +5,7 @@ require 'fileutils'
 # Configuration
 DATA_FILE = 'data/requirements.csv'
 OUTPUT_DIR = 'docs/generated'
-ASSETS_DIR = 'docs/assets/requirements'
+ASSETS_DIR = 'data/assets/requirements'
 
 # Ensure output directory exists
 FileUtils.mkdir_p(OUTPUT_DIR)
@@ -75,8 +75,8 @@ requirements_by_book.each do |book, sections|
           files = attached_files.split(',').map(&:strip)
           files.each do |file|
             # AsciiDoc image path relative to book root (which is docs/)
-            # So assets/requirements/file is correct since we include from docs/
-            f.puts "image::assets/requirements/#{file}[#{file},300]" 
+            # So data/assets/requirements/file is ../data/assets/requirements/file
+            f.puts "image::../data/assets/requirements/#{file}[#{file},300]" 
           end
           f.puts "+"
         end

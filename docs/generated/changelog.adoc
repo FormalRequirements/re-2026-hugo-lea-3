@@ -1,9 +1,14 @@
 = Changelog
 :toc:
 
-Generated from git history at 2026-01-20 15:25:06
+Generated from git history at 2026-01-20 15:56:18
 
 == Features
 
+* 2026-01-20 - *reqs:* add support for file attachments in requirements ({commit[:hash]})
 * 2026-01-20 - *infra:* implement requirements workflow and changelog generation ({commit[:hash]})
+
+== Documentation
+
+* 2026-01-20 - Added initial README ({commit[:hash]})
 
