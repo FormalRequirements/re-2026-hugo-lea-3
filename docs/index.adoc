@@ -30,5 +30,3 @@ include::environment.adoc[]
 include::system.adoc[]
 
 include::project.adoc[]
-
-

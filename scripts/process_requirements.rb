@@ -17,20 +17,42 @@ requirements_by_book = Hash.new { |h, k| h[k] = Hash.new { |h2, k2| h2[k2] = [] 
 # Validation errors
 errors = []
 
-# Read CSV
+# Read CSV and build ID->Book map
+all_rows = []
+id_to_book = {}
+
 CSV.foreach(DATA_FILE, headers: true) do |row|
   next if row['ID'].nil? || row['ID'].strip.empty?
+  all_rows << row
   
   book = row['Book']&.strip || 'Unassigned'
+  id_to_book[row['ID']] = book
+end
+
+# Iterate for validation and grouping
+all_rows.each do |row|
+  book = row['Book']&.strip || 'Unassigned'
   section = row['Section']&.strip || 'General'
-  
-  # Validate attachments
+
+  # Validation: Attributes
   if row['Attached Files'] && !row['Attached Files'].strip.empty?
     files = row['Attached Files'].split(',').map(&:strip)
     files.each do |file|
       unless File.exist?(File.join(ASSETS_DIR, file))
         errors << "Requirement #{row['ID']} references missing file: #{file} (expected at #{File.join(ASSETS_DIR, file)})"
       end
+    end
+  end
+
+  # Validation: Cross-book references
+  if row['Refers To'] && !row['Refers To'].strip.empty?
+    refers_id = row['Refers To'].strip
+    refers_book = id_to_book[refers_id]
+    
+    if refers_book.nil?
+      errors << "Requirement #{row['ID']} refers to non-existent ID #{refers_id}"
+    elsif refers_book != book
+      errors << "Cross-book reference violation: #{row['ID']} (#{book}) refers to #{refers_id} (#{refers_book}). References must stay within the same Book."
     end
   end
 
