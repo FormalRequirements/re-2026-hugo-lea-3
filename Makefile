@@ -12,6 +12,10 @@ requirements:
 	mkdir -p $(DOC_DIR)/assets
 	cp -R $(DATA_DIR)/assets/* $(DOC_DIR)/assets/
 
+check-assets:
+	# validation is built-in to the processing script
+	ruby $(SCRIPTS_DIR)/process_requirements.rb
+
 changelog:
 	ruby $(SCRIPTS_DIR)/generate_changelog.rb
 

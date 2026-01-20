@@ -1,7 +1,7 @@
 = Changelog
 :toc:
 
-Generated from git history at 2026-01-20 16:14:43
+Generated from git history at 2026-01-20 16:15:04
 
 == Features
 
@@ -10,6 +10,7 @@ Generated from git history at 2026-01-20 16:14:43
 
 == Bug Fixes
 
+* 2026-01-20 - *docs:* center aligned images in generated output ({commit[:hash]})
 * 2026-01-20 - *docs:* absolute imagesdir path for pdf generation ({commit[:hash]})
 * 2026-01-20 - *ops:* move assets to data directory and correct image paths ({commit[:hash]})
 
