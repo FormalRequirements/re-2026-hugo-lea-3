@@ -19,10 +19,12 @@ check-assets:
 changelog:
 	ruby $(SCRIPTS_DIR)/generate_changelog.rb
 
-html:
+html: requirements changelog
+	mkdir -p $(BUILD_DIR)/assets
+	cp -R $(DATA_DIR)/assets/* $(BUILD_DIR)/assets/
 	bundle exec asciidoctor -D $(BUILD_DIR) $(INDEX)
 
-pdf:
+pdf: requirements changelog
 	bundle exec asciidoctor-pdf -D $(BUILD_DIR) -a pdf-theme=default -r ./scripts/polyfill.rb $(INDEX)
 
 clean:
