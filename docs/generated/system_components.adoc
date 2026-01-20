@@ -14,7 +14,8 @@
 ****
 *Description:* The system should generate AsciiDoc include files from the CSV source.
 
-image::assets/requirements/architecture.png[architecture.png,300]
+image::assets/requirements/architecture.png[architecture.png,300,align="center"]
+image::assets/requirements/architecture2.png[architecture2.png,300,align="center"]
 
 *Refers To:* <<SYS-001>>
 *Priority:* High | *Status:* Proposed

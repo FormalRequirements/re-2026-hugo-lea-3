@@ -76,7 +76,7 @@ requirements_by_book.each do |book, sections|
           files.each do |file|
             # AsciiDoc image path relative to book root (which is docs/)
             # We use a symlink docs/assets -> ../data/assets
-            f.puts "image::assets/requirements/#{file}[#{file},300]" 
+            f.puts "image::assets/requirements/#{file}[#{file},300,align=\"center\"]" 
           end
           f.puts
         end
