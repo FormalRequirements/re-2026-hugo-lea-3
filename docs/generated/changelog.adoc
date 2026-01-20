@@ -1,0 +1,5 @@
+= Changelog
+:toc:
+
+Generated from git history at 2026-01-20 15:23:13
+

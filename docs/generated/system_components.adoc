@@ -1,0 +1,28 @@
+// Generated from data/requirements.csv
+// Book: System, Section: Components
+
+[[SYS-001]]
+.SYS-001
+****
+*Description:* The system should implement a CSV-based requirements management workflow.
++
+*Priority:* High | *Status:* Proposed
+****
+
+[[SYS-002]]
+.SYS-002
+****
+*Description:* The system should generate AsciiDoc include files from the CSV source.
++
+*Refers To:* <<SYS-001>>
+*Priority:* High | *Status:* Proposed
+****
+
+[[SYS-003]]
+.SYS-003
+****
+*Description:* The system should generate a changelog from git history.
++
+*Priority:* Medium | *Status:* Proposed
+****
+

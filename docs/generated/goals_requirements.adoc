@@ -1,0 +1,9 @@
+=== Goals Requirements
+
+[cols="1,1,3,1,1,1", options="header"]
+|===
+| ID | Section | Description | Refers To | Priority | Status
+
+| PERF-001 | Performance | API latency must be under 200ms |  | P0 | Open
+|===
+
