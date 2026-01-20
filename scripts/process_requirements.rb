@@ -4,8 +4,8 @@ require 'fileutils'
 
 # Configuration
 DATA_FILE = 'data/requirements.csv'
-OUTPUT_DIR = 'docs/generated'
 ASSETS_DIR = 'data/assets/requirements'
+OUTPUT_DIR = 'docs/generated'
 
 # Ensure output directory exists
 FileUtils.mkdir_p(OUTPUT_DIR)
@@ -69,16 +69,16 @@ requirements_by_book.each do |book, sections|
         f.puts ".#{id}"
         f.puts "****"
         f.puts "*Description:* #{desc}"
-        f.puts "+"
+        f.puts
         
         if attached_files && !attached_files.strip.empty?
           files = attached_files.split(',').map(&:strip)
           files.each do |file|
             # AsciiDoc image path relative to book root (which is docs/)
-            # So data/assets/requirements/file is ../data/assets/requirements/file
-            f.puts "image::../data/assets/requirements/#{file}[#{file},300]" 
+            # We use a symlink docs/assets -> ../data/assets
+            f.puts "image::assets/requirements/#{file}[#{file},300]" 
           end
-          f.puts "+"
+          f.puts
         end
 
         f.puts "*Refers To:* <<#{refers}>>" unless refers.nil? || refers.empty?

@@ -5,7 +5,7 @@
 .SYS-001
 ****
 *Description:* The system should implement a CSV-based requirements management workflow.
-+
+
 *Priority:* High | *Status:* Proposed
 ****
 
@@ -13,9 +13,9 @@
 .SYS-002
 ****
 *Description:* The system should generate AsciiDoc include files from the CSV source.
-+
-image::../data/assets/requirements/architecture.png[architecture.png,300]
-+
+
+image::assets/requirements/architecture.png[architecture.png,300]
+
 *Refers To:* <<SYS-001>>
 *Priority:* High | *Status:* Proposed
 ****
@@ -24,7 +24,7 @@ image::../data/assets/requirements/architecture.png[architecture.png,300]
 .SYS-003
 ****
 *Description:* The system should generate a changelog from git history.
-+
+
 *Priority:* Medium | *Status:* Proposed
 ****
 
