@@ -1,5 +1,22 @@
-ID,Book,Section,Description,Refers To,Priority,Status,Attached Files
-SYS-001,System,Components,The system should implement a CSV-based requirements management workflow.,,High,Proposed
-SYS-002,System,Components,The system should generate AsciiDoc include files from the CSV source.,SYS-001,High,Proposed,"architecture.png,architecture2.png"
-SYS-003,System,Components,The system should generate a changelog from git history.,,Medium,Proposed
-
+id,book,chapter,description,priority,reference to,attached files
+PROJ-001,Project,Vision,Build a high-speed native macOS tool to transform the clipboard into a structured workspace[cite: 1, 16].,Must,,
+PROJ-002,Project,Localization,Support English (US/UK), French, German, and Spanish at launch[cite: 17, 86, 87].,Should,,
+PROJ-003,Project,Localization,Right-to-Left (RTL) support is not required for the initial launch[cite: 90].,Won't,,
+ENV-001,Environment,SoftwareRequirements,Requires macOS 12.0 (Monterey) or newer for API compatibility[cite: 9, 74, 75].,Must,,
+ENV-002,Environment,SoftwareRequirements,Universal Binary support for both Apple Silicon and Intel-based Macs[cite: 9, 76].,Must,,
+ENV-003,Environment,SoftwareRequirements,Requires Accessibility and Screen Recording system permissions[cite: 9, 77].,Must,,
+ENV-004,Environment,HardwareRequirements,RAM usage between 100MB – 300MB with minimal CPU impact[cite: 8, 70, 71].,Should,,
+GOAL-001,Goal,UserGoals,Eliminate context switching via Sequential Copying (multi-copy/single-paste)[cite: 2, 64].,Must,,
+GOAL-002,Goal,Performance,Achieve perceptually instantaneous response times for all core operations[cite: 15, 54].,Must,,
+GOAL-003,Goal,Security,Ensure 100% data privacy via local-only storage and no cloud synchronization[cite: 7, 62, 100].,Must,,
+SYS-001,System,Functionality,Handle Text (plain, code, rich), Media, Files, and Links with metadata[cite: 4, 20].,Must,GOAL-001,
+SYS-002,System,SequentialCopying,Implement a temporary FIFO stack for multi-copy/single-paste actions[cite: 5, 26, 27].,Must,GOAL-001,
+SYS-003,System,FloatingPins,Implement draggable and always-on-top tear-off windows for reference data[cite: 11, 30, 31].,Should,GOAL-001,
+SYS-004,System,Tagging,Support a full CRUD lifecycle for tags to organize and protect items[cite: 6, 35, 38].,Should,GOAL-003,
+SYS-005,System,UserInterface,Horizontal Shelf (max 35% height) with card-based history and smart preview[cite: 13, 45, 50].,Must,GOAL-001,
+SYS-006,System,Security,AES-256 encryption at rest and exclusion of concealed password data[cite: 7, 59, 60].,Must,GOAL-003,
+SYS-007,System,Search,Enable real-time searching through a multi-parameter filter bar[cite: 12, 40, 41].,Must,GOAL-001,
+SYS-008,System,Accessibility,Support VoiceOver, full keyboard navigation, and high-contrast modes[cite: 10, 81, 83].,Should,,
+SYS-009,System,SystemIntegration,Deep awareness for browsers, IDEs, design tools, and productivity suites[cite: 17, 93, 94].,Should,,
+SYS-010,System,Backup,Support manual encrypted export and daily local database snapshots[cite: 103, 104].,Could,GOAL-003,
+SYS-011,System,SystemIntegration,No support for third-party plugins or extensions at launch[cite: 18, 97].,Won't,,
