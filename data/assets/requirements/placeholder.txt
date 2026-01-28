@@ -1,1 +1,0 @@
-This directory contains assets (images, diagrams) attached to requirements.

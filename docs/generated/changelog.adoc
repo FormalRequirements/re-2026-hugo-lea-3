@@ -1,5 +1,0 @@
-[cols="1,1,2,3", options="header"]
-|===
-| Version | Date | Author | Description
-| v0.1-alpha | 2026-01-20 | hugoglvs | Initial Alpha Release
-|===

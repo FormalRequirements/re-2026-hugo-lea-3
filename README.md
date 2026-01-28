@@ -1,35 +1,26 @@
-# re-2026-hugo-lea-3
-
-## Description
-
-The project we'll be working on is a Mac OS application dedicated to easily manage clipboard history and screenshots.
+# Formal Requirements
 
 ## Authors
-- Hugo GONÇALVES
-- Lea POISSON
+- Hugo GONÇALVES: Application owner and responsible for the CI/CD pipeline.
+- Lea POISSON: Responsible for the requirements and specifications.
 
-## CI/CD Pipeline
+## Overview
+This repository is dedicated to defining and managing proper software requirements for a MacOS application dedicated to help users manage their clipboard history and screenshots. The project follows a "Requirements as Code" approach, where requirements are defined in structured formats and automatically processed to generate specifications.
 
-This project uses GitHub Actions for continuous integration and automated documentation generation.
+## Workflow
+1. **Define Requirements**: Add or modify requirements in `requirements.csv`.
+2. **Key Fields**:
+    - `id`: Unique identifier (e.g., G.1.1).
+    - `description`: Detailed explanation.
+    - `parent`: Parent requirement (e.g., G.1).
+    - `reference to`: Reference to other requirements (e.g., G.1.1).
+    - `attached files`: Attached files (e.g., assets/diagram.puml).
+    - `priority`: Priority (e.g., Must, Could, Should, Won't).
+3. **Automation**:
+    - Pushing changes to `requirements.csv` triggers a GitHub Action.
+    - The action uses [hugoglvs/pegs-specs-custom-action](https://github.com/hugoglvs/pegs-specs-custom-action) to generate specification artifacts.
 
-### PEGS Specs Generation
-The project utilizes the `hugoglvs/pegs-specs-custom-action` to automatically generate formal requirement specifications from `data/requirements.csv`.
-
-- **Trigger**: Every push to `main` and all pull requests.
-- **Artifacts**:
-  - `full-specs.pdf`: The complete formal specification document.
-  - `index.html`: A tabbed web version for easy navigation.
-- **Workflow**: [.github/workflows/pegs-specs.yml](file:///.github/workflows/pegs-specs.yml)
-
-### DevSecOps & Security
-Security is integrated into the workflow through automated scanning:
-
-- **SAST (Static Analysis Security Testing)**: CodeQL is used to analyze the codebase for security vulnerabilities and code quality issues.
-- **Secret Scanning**: Standard GitHub secret scanning is enabled to prevent the accidental exposure of credentials.
-- **Workflow**: [.github/workflows/security.yml](file:///.github/workflows/security.yml)
-
-## Development Standards
-
-- **PRs**: Use the provided [Pull Request Template](file:///.github/PULL_REQUEST_TEMPLATE.md).
-- **Issues**: Use [Bug Report](file:///.github/ISSUE_TEMPLATE/bug_report.yml) or [Feature Request](file:///.github/ISSUE_TEMPLATE/feature_request.yml) templates.
-- **Aesthetics**: All web-facing artifacts (like the generated HTML specs) follow premium design principles.
+## Development
+- **Branching**: Use `feat/name` or `fix/name`.
+- **Commits**: Follow conventional commits.
+- **Issues**: Use the provided templates for bugs and features.
