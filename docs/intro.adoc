@@ -1,10 +1,5 @@
-= Revision History
+== Revision History
 
-[cols="1,1,2,1", options="header"]
-|===
-| Name | Date | Reason For Changes | Version
-| J.-M. Bruel | 2021-01-22 | First Draft | 1.0
-| Hugo G. | 2026-01-20 | Migration to AsciiDoc | 2.0
-|===
+include::generated/changelog.adoc[]
 
 This document follows the requirements documentation structure presented in the link:https://link.springer.com/content/pdf/10.1007/978-3-031-06739-6.pdf[Handbook of requirements and business analysis], by Bertrand Meyer.

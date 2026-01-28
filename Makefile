@@ -9,15 +9,23 @@ all: requirements changelog html pdf
 
 requirements:
 	ruby $(SCRIPTS_DIR)/process_requirements.rb
+	mkdir -p $(DOC_DIR)/assets
+	cp -R $(DATA_DIR)/assets/* $(DOC_DIR)/assets/
+
+check-assets:
+	# validation is built-in to the processing script
+	ruby $(SCRIPTS_DIR)/process_requirements.rb
 
 changelog:
 	ruby $(SCRIPTS_DIR)/generate_changelog.rb
 
-html:
+html: requirements changelog
+	mkdir -p $(BUILD_DIR)/assets
+	cp -R $(DATA_DIR)/assets/* $(BUILD_DIR)/assets/
 	bundle exec asciidoctor -D $(BUILD_DIR) $(INDEX)
 
-pdf:
-	bundle exec asciidoctor-pdf -D $(BUILD_DIR) -a pdf-theme=default $(INDEX)
+pdf: requirements changelog
+	bundle exec asciidoctor-pdf -D $(BUILD_DIR) -a pdf-theme=default -r ./scripts/polyfill.rb $(INDEX)
 
 clean:
 	rm -rf $(BUILD_DIR)

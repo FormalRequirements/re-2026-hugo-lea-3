@@ -1,4 +1,5 @@
-ID,Book,Section,Description,Refers To,Priority,Status
+ID,Book,Section,Description,Refers To,Priority,Status,Attached Files
 SYS-001,System,Components,The system should implement a CSV-based requirements management workflow.,,High,Proposed
-SYS-002,System,Components,The system should generate AsciiDoc include files from the CSV source.,SYS-001,High,Proposed
+SYS-002,System,Components,The system should generate AsciiDoc include files from the CSV source.,SYS-001,High,Proposed,"architecture.png,architecture2.png"
 SYS-003,System,Components,The system should generate a changelog from git history.,,Medium,Proposed
+
