@@ -1,0 +1,25 @@
+name: Generate Specs
+
+on:
+    push:
+        paths:
+            - "requirements.csv"
+    workflow_dispatch:
+
+permissions:
+    contents: write
+
+jobs:
+    build-specs:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+
+            - name: Generate Specifications
+              uses: hugoglvs/pegs-specs-custom-action@v1.0.0
+              with:
+                  requirements-path: "requirements.csv"
+                  output-dir: "docs/build"
+                  project-name: "MacOS Clipboard Manager Specifications"
+                  authors: "Hugo Goncalves, Lea Poisson"
+                  #   logo-path: "assets/image.svg"

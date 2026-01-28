@@ -1,6 +1,0 @@
-build/
-docs/generated/
-docs/assets/
-.DS_Store
-*.swp
-vendor/bundle/
