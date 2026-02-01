@@ -1,27 +1,48 @@
-id,description,priority,parent,reference to,attached files
-P.1.1,Hugo & Léa act as requirements engineers for this project.,Must,,interview.txt,
-P.2.1,Native macOS development with Universal Binary support (Apple Silicon/Intel).,Must,,interview.txt,
-P.5.1,Swift/SwiftUI usage for a lightweight footprint without external dependencies.,Must,,interview.txt,
-E.1.1,Key concepts definition: Sequential Copying and Floating Pins.,Must,,interview.txt,
-E.2.1,"Integration via Menu Bar icon, System Shelf, and Background Agent.",Must,,interview.txt,
-E.3.1,Support for macOS 12.0+ and Accessibility/Screen Recording permissions.,Must,,interview.txt,
-E.3.1.1,"Global hotkeys must function across QWERTY, AZERTY, and QWERTZ layouts.",Must,E.3.1,interview.txt,
-E.5.1,Target active RAM consumption between 100MB and 300MB.,Should,,interview.txt,
-G.1.1,Transform the volatile system clipboard into a structured and searchable workspace.,Must,,interview.txt,
-G.3.1,Elimination of context-switching and reduction of cognitive load.,Must,,interview.txt,
-G.4.1,"Handling of Text, Code, Media, Files, and Links with metadata.",Must,,interview.txt,
-G.6.1,Local-only storage: no cloud synchronization of data.,Must,,interview.txt,
-G.6.1.1,No support for Right-to-Left (RTL) languages at launch.,Won't,G.6.1,interview.txt,
-G.6.1.2,No support for third-party plugins or extensions at launch.,Won't,G.6.1,interview.txt,
-G.7.1,"Target users: developers, writers, and researchers.",Must,,interview.txt,
-S.1.1,"Horizontal ""Shelf"" interface limited to 35% of screen height.",Must,,interview.txt,
-S.1.1.1,Card-based history list featuring source application icons.,Must,S.1.1,interview.txt,
-S.1.1.2,"Smart preview pane (code rendering, images, rich links).",Must,S.1.1,interview.txt,
-S.2.1,Real-time multi-parameter search and filtering by tags.,Must,,interview.txt,
-S.2.1.1,Full CRUD lifecycle for tags with protection against auto-purge.,Should,S.2.1,interview.txt,
-S.2.1.2,Temporary FIFO stack for Sequential Copying (CMD+SHIFT+C).,Must,S.2.1,interview.txt,
-S.2.1.3,"Detachable, resizable ""Floating Pins"" windows that stay Always-on-Top.",Should,S.2.1,interview.txt,
-S.3.1,"Deep Awareness integration with browsers, IDEs, and design tools.",Should,,interview.txt,
-S.5.1,"Instantaneous response times: Capture <10ms, Search <100ms, UI <150ms.",Must,,interview.txt,
-S.6.1,AES-256 encryption at rest and exclusion of concealed sensitive data.,Must,,interview.txt,
-S.6.1.1,Local backup system via daily snapshots and manual export.,Could,S.6.1,interview.txt,
+id,description,parent,reference to,attached files,priority
+G.1.1,Develop a MacOS native application for clipboard management.,,,,Must
+G.1.2,Architecture must support future extension to iOS.,G.1.1,,,Should
+G.3.1,Increase user productivity by reducing context switching during copy-paste operations.,,,,Should
+G.4.1,Handle complex content types including Files and Rich Links.,,,,Must
+G.6.1,Cloud synchronization of clipboard history.,,,,Won't
+G.7.1,User: General MacOS users requiring advanced clipboard features.,,,,Must
+G.7.2,Admin: Capability to generate and distribute free license keys.,,,,Must
+E.3.1,Compliance with Apple App Store Review Guidelines (Sandboxing).,,,,Must
+E.3.2,Compliance with Swift UI/AppKit design conventions.,,,,Must
+E.3.3,Obtain and manage macOS Accessibility and Screen Recording permissions.,,,,Must
+E.3.3.1,Global hotkeys must support QWERTY; AZERTY; and QWERTZ layouts.,E.3.3,,,Must
+E.5.1,Target active RAM consumption between 100MB and 300MB.,,,,Should
+P.2.1,Implementation of Feature Flags for gradual rollout/testing.,,,,Must
+P.2.2,DevOps: CI/CD pipeline integration (Build/Test/Deploy).,,,,Must
+P.2.3,Universal Binary support (Apple Silicon/Intel).,,,,Must
+P.3.1,Readiness for App Store Review submission.,,,,Must
+P.3.1.1,Target Date: 2026-06-01.,P.3.1,,,Must
+P.7.1,Documentation-as-code strategy for technical specs.,,,,Must
+S.1.1,Main Application (UI/Logic).,,,[Image of component diagram],Must
+S.1.2,Background Daemon (Clipboard Listener).,S.1.1,,,Must
+S.1.3,Adherence to defined Class Architecture and Object Model.,S.1.1,,assets/class_diagram.puml,Must
+S.2.1,Clipboard History Interface.,,,,Must
+S.2.1.1,"Trigger: SHIFT+CMD+V (Default) opens fixed window.",S.2.1,,,Must
+S.2.1.2,Navigation: Arrow keys to traverse; ENTER to paste.,S.2.1,,,Must
+S.2.1.3,Metadata: Display Date; App Source; Type; Size.,S.2.1,,,Must
+S.2.1.4,Content Type Handling: Text; Image; Code; Color; Video; GIF; Files.,S.2.1,,,Must
+S.2.1.5,Search and Filter: Real-time filtering by tags and content type.,S.2.1,,,Must
+S.2.2,Pinned Items (Floating Windows).,,,,Should
+S.2.2.1,Pinned item must be resizable and draggable.,S.2.2,,,Should
+S.2.2.2,Lock mode: Prevent editing of pinned content.,S.2.2,,,Should
+S.2.2.3,Transparency: Window becomes transparent on hover.,S.2.2,,,Could
+S.2.3,Sequential Copying (Temporary Stack).,,,,Should
+S.2.3.1,"Trigger: SHIFT+CMD+C opens temporary clipboard.",S.2.3,,,Should
+S.2.3.2,Paste Mode: Support FIFO and LIFO sorting.,S.2.3,,,Should
+S.2.4,OCR / Screen Text Capture.,,,,Could
+S.2.4.1,"Trigger: SHIFT+CMD+2 activates area selection for text extraction.",S.2.4,,,Could
+S.2.5,Color Picker Utility.,,,,Could
+S.2.5.1,"Trigger: SHIFT+CMD+1 activates color picker.",S.2.5,,,Could
+S.2.5.2,Color Metadata: Visual preview + Hex/RGB text.,S.2.5,,,Could
+S.2.5.3,Export: Convert color to user-selected format.,S.2.5,,,Could
+S.4.1,User Story: Developer copying code snippets to batch paste.,,,,Should
+S.4.2,User Story: Designer pinning color palette reference.,,,,Could
+S.5.1,Critical Path: Core History; Paste; UI Rendering.,,,,Must
+S.5.2,Latency Targets: Capture <10ms; Search <100ms; UI <150ms.,S.5.1,,,Must
+S.6.1,Unit Tests covering >80% of business logic.,,,,Must
+S.6.2,UI Tests for pinning and window transparency behavior.,,,,Should
+S.6.3,Security: AES-256 encryption for data at rest.,,,,Must
