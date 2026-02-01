@@ -15,7 +15,7 @@ P.2.1,Implementation of Feature Flags for gradual rollout/testing.,,,,Must
 P.2.2,DevOps: CI/CD pipeline integration (Build/Test/Deploy).,,,,Must
 P.2.3,Universal Binary support (Apple Silicon/Intel).,,,,Must
 P.3.1,Readiness for App Store Review submission.,,,,Must
-P.3.1.1,Target Date: 2026-06-01.,P.3.1,,,Must
+P.3.1.1,Target Date: 2026-06-01.,P.3.1,,,Could
 P.4.1,User Acceptance Testing (UAT) to validate app against business goals.,,,,Must
 P.7.1,Documentation-as-code strategy for technical specs.,,,,Must
 S.1.1,Main Application (UI/Logic).,,,,Must
