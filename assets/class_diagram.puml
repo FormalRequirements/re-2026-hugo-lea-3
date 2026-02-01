@@ -1,0 +1,87 @@
+@startuml
+
+package "Core Logic" {
+    class ClipboardManager <<Singleton>> {
+        - history: List<ClipboardItem>
+        - pinnedItems: List<ClipboardItem>
+        - sequentialStack: Stack<ClipboardItem>
+        + startListening()
+        + copy(item: ClipboardItem)
+        + paste(item: ClipboardItem)
+        + pinItem(item: ClipboardItem)
+        + addToSequentialStack(item: ClipboardItem)
+        + popFromSequentialStack(): ClipboardItem
+    }
+
+    class ClipboardItem {
+        + uuid: UUID
+        + timestamp: Date
+        + sourceApp: String
+        + type: ContentType
+        + contentData: Data
+        + metadata: Dictionary
+        + encrypt()
+        + decrypt()
+    }
+
+    enum ContentType {
+        TEXT
+        IMAGE
+        FILE
+        COLOR
+        CODE
+        VIDEO
+        GIF
+    }
+}
+
+package "Services" {
+    class PersistenceService {
+        + save(item: ClipboardItem)
+        + loadRecent(limit: Int): List<ClipboardItem>
+        - encryptAES256(data: Data): Data
+        - decryptAES256(data: Data): Data
+    }
+
+    class HotKeyManager {
+        + register(keyCombo: String, action: Closure)
+        + detectLayout(): KeyboardLayout
+    }
+
+    class PermissionHandler {
+        + checkAccessibility(): Boolean
+        + checkScreenRecording(): Boolean
+    }
+}
+
+package "UI Layer" {
+    class WindowManager {
+        + showHistoryWindow()
+        + showPinWindow(item: ClipboardItem)
+        + showSequentialOverlay()
+    }
+
+    class HistoryView {
+        + renderList(items: List<ClipboardItem>)
+        + filter(query: String)
+    }
+
+    class PinWindow {
+        + isLocked: Boolean
+        + opacity: Float
+        + toggleLock()
+        + setTransparency(value: Float)
+    }
+}
+
+' Relationships
+ClipboardManager "1" *-- "*" ClipboardItem : manages
+ClipboardManager ..> PersistenceService : uses
+ClipboardManager ..> HotKeyManager : observes
+ClipboardItem -- ContentType : has
+WindowManager --> ClipboardManager : interacts
+WindowManager *-- HistoryView : controls
+WindowManager *-- PinWindow : controls
+ClipboardManager ..> PermissionHandler : guards
+
+@enduml
