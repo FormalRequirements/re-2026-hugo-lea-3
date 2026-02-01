@@ -5,7 +5,6 @@ on:
         paths:
             - "requirements.csv"
     workflow_dispatch:
-
 permissions:
     contents: write
 
@@ -16,10 +15,11 @@ jobs:
             - uses: actions/checkout@v4
 
             - name: Generate Specifications
-              uses: hugoglvs/pegs-specs-custom-action@v1.0.0
+              uses: hugoglvs/pegs-specs-custom-action@v1
               with:
                   requirements-path: "requirements.csv"
                   output-dir: "docs/build"
+                  structure-path: "structure.csv"
                   project-name: "MacOS Clipboard Manager Specifications"
                   authors: "Hugo Goncalves, Lea Poisson"
                   #   logo-path: "assets/image.svg"
