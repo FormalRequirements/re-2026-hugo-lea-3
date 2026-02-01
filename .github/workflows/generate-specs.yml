@@ -16,7 +16,7 @@ jobs:
             - uses: actions/checkout@v4
 
             - name: Generate Specifications
-              uses: hugoglvs/pegs-specs-custom-action@v1
+              uses: hugoglvs/pegs-specs-custom-action@v1.2
               with:
                   requirements-path: "requirements.csv"
                   output-dir: "docs/build"
