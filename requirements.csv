@@ -1,6 +1,6 @@
 id,description,parent,reference to,attached files,priority
 G.1.1,Develop a MacOS native application for clipboard management.,,,,Must
-G.1.2,Architecture must support future extension to iOS.,G.1.1,,,Should
+G.1.1.1,Architecture must support future extension to iOS.,G.1.1,,,Should
 G.3.1,Increase user productivity by reducing context switching during copy-paste operations.,,,,Should
 G.4.1,Handle complex content types including Files and Rich Links.,,,,Must
 G.6.1,Cloud synchronization of clipboard history.,,,,Won't
@@ -16,10 +16,11 @@ P.2.2,DevOps: CI/CD pipeline integration (Build/Test/Deploy).,,,,Must
 P.2.3,Universal Binary support (Apple Silicon/Intel).,,,,Must
 P.3.1,Readiness for App Store Review submission.,,,,Must
 P.3.1.1,Target Date: 2026-06-01.,P.3.1,,,Must
+P.4.1,User Acceptance Testing (UAT) to validate app against business goals.,,,,Must
 P.7.1,Documentation-as-code strategy for technical specs.,,,,Must
-S.1.1,Main Application (UI/Logic).,,,[Image of component diagram],Must
-S.1.2,Background Daemon (Clipboard Listener).,S.1.1,,,Must
-S.1.3,Adherence to defined Class Architecture and Object Model.,S.1.1,,assets/class_diagram.puml,Must
+S.1.1,Main Application (UI/Logic).,,,,Must
+S.1.1.1,Background Daemon (Clipboard Listener).,S.1.1,,,Must
+S.1.1.2,Adherence to defined Class Architecture and Object Model.,S.1.1,,assets/class_diagram.puml,Must
 S.2.1,Clipboard History Interface.,,,,Must
 S.2.1.1,"Trigger: SHIFT+CMD+V (Default) opens fixed window.",S.2.1,,,Must
 S.2.1.2,Navigation: Arrow keys to traverse; ENTER to paste.,S.2.1,,,Must
@@ -42,7 +43,7 @@ S.2.5.3,Export: Convert color to user-selected format.,S.2.5,,,Could
 S.4.1,User Story: Developer copying code snippets to batch paste.,,,,Should
 S.4.2,User Story: Designer pinning color palette reference.,,,,Could
 S.5.1,Critical Path: Core History; Paste; UI Rendering.,,,,Must
-S.5.2,Latency Targets: Capture <10ms; Search <100ms; UI <150ms.,S.5.1,,,Must
+S.5.1.1,Latency Targets: Capture <10ms; Search <100ms; UI <150ms.,S.5.1,,,Must
 S.6.1,Unit Tests covering >80% of business logic.,,,,Must
 S.6.2,UI Tests for pinning and window transparency behavior.,,,,Should
 S.6.3,Security: AES-256 encryption for data at rest.,,,,Must
