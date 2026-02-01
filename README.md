@@ -9,7 +9,9 @@ This repository is dedicated to defining and managing proper software requiremen
 
 ## Workflow
 1. **Define Requirements**: Add or modify requirements in `requirements.csv`.
-2. **Key Fields**:
+2. **Key Files**:
+    - `requirements.csv`: Contains the list of requirements with their properties.
+    - `structure.csv`: Defines the document hierarchy (Parts and Sections).
     - `id`: Unique identifier (e.g., G.1.1).
     - `description`: Detailed explanation.
     - `parent`: Parent requirement (e.g., G.1).
